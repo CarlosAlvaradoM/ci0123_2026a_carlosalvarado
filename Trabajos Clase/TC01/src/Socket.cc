@@ -112,13 +112,16 @@ size_t Socket::Read( void * buffer, size_t size ) {
  **/
 size_t Socket::Write( const void * buffer, size_t size ) {
 
-   int st = -1;
+   // Usar el metodo Write()
+   // Parametros: descriptor de socket, buffer, tamano a escribir
+   ssize_t writtenBytes = write(this->sockId, buffer, size);
 
-   if ( -1 == st ) {
+   // Error
+   if ( writtenBytes == -1 ) {
       throw std::runtime_error( "Socket::Write( void *, size_t )" );
    }
 
-   return st;
+   return writtenBytes;
 
 }
 
