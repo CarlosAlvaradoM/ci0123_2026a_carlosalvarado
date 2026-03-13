@@ -135,13 +135,12 @@ size_t Socket::Write( const void * buffer, size_t size ) {
  **/
 size_t Socket::Write( const char * text ) {
 
-   int st = -1;
+   // Calcular la longitud del string
+   // Usar strlen: cuenta hasta caracter nulo
+   size_t lenght = strlen(text);
 
-   if ( -1 == st ) {
-      throw std::runtime_error( "Socket::Write( char * )" );
-   }
-
-   return st;
+   // Usar el metodo writte de buffer y tamano
+   return this->Write(text, lenght);
 
 }
 
