@@ -88,13 +88,16 @@ int Socket::Connect( const char *host, const char *service ) {
  **/
 size_t Socket::Read( void * buffer, size_t size ) {
 
-   int st = -1;
+   // Usar el metodo read()
+   // Parametros: descriptor del socket, buffer, tamano maximo a leer
+   ssize_t readBytes = read(this->sockId, buffer, size);
 
-   if ( -1 == st ) {
+   // Error
+   if ( readBytes == -1 ) {
       throw std::runtime_error( "Socket::Read( void *, size_t )" );
    }
 
-   return st;
+   return readBytes;
 
 }
 
