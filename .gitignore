@@ -55,13 +55,6 @@ Release/
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
-Makefile
-
-# ==================== DATOS DE PRUEBAS ====================
-*.csv
-*.dat
-*.txt
-data/
 
 # ==================== DOCUMENTACIÓN AUTOGENERADA ====================
 docs/html/
