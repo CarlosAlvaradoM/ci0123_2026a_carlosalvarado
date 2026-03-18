@@ -18,7 +18,7 @@
 
 int main( int argc, char * argv[] ) {
    // Mi direccion IPv4
-   const char* miIPv4 = "192.168.7.4";
+   const char* miIPv4 = "192.168.7.9";
    // Puerto del server
    int puerto = 8080;
 
