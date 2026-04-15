@@ -1,0 +1,5 @@
+# Indicar modelos de creación de hijos y comunicación para los programas de simulación
+
+En los programas se usan hilos (threads) mediante la librería POSIX (pthread) para las identidades. El proceso principal se encarga de crear múltiples hilos que representan a los clientes, además de hilos adicionales para el interceptor y el servidor. Todos estos hilos comparten el mismo espacio de memoria, lo que permite una ejecución concurrente eficiente y un acceso directo a las estructuras de datos compartidas.
+
+Y el modelo de comunicación, se implementa un esquema de memoria compartida sincronizada, en el cual los hilos intercambian información a través de estructuras como colas (queue). Estas colas permiten modelar el flujo de mensajes entre los distintos componentes del sistema (cliente, interceptor y servidor). Para evitar condiciones de carrera, se utilizan mutex que protegen el acceso a las estructuras compartidas, y semáforos que coordinan la ejecución entre los hilos. De esta forma, se logra una comunicación ordenada y segura, respetando las diferentes fases del procesamiento dentro de la simulación.
